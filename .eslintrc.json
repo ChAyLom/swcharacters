@@ -1,0 +1,45 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "quotes": ["warn", "single"],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "semi": [2, "always"],
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/no-unescaped-entities": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-uses-react": 0,
+    "no-case-declarations": 0,
+    "no-unused-vars": "warn",
+    "max-len": ["warn", 90]
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "ignorePatterns": [
+    "webpack.config.js"
+  ]
+}
