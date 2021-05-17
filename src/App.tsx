@@ -1,17 +1,9 @@
 import { FC, Fragment } from 'react';
-import styles from './styles.scss';
+import Router from './Components/Router';
 
-interface Props {
-  name: string,
-}
-
-const App: FC<Props> = ({
-  name
-}) => {
+const App: FC = () => {
   return <Fragment>
-    <h1 className={styles.header}>
-      Hello {name}
-    </h1>
+    <Router />
   </Fragment>;
 };
 
