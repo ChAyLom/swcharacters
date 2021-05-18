@@ -2,6 +2,7 @@ import { FC, Fragment } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { planetFetcher } from '../../libs/fetches';
+import { getIdFromUrl } from '../../libs/utils';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PeoplesList from '../PeoplesList/PeoplesList';
 import styles from './PlanetView.scss';
@@ -23,7 +24,7 @@ const PlanetView: FC = () => {
         Planet {planet.name}
       </div>
       <PeoplesList
-        planet={planet}
+        peopleIds={planet.residents.map(url => getIdFromUrl(url))}
       />
     </Fragment>}
     {isLoading && <LoadingSpin />}

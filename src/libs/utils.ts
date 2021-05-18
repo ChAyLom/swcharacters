@@ -1,7 +1,7 @@
-export const getIdFromUrl = (url: string): number | null => {
+export const getIdFromUrl = (url: string): string => {
   const res = url.match(/\/\d+\/$/)?.[0];
-  if (!res) return null;
-  return Number(res.substring(1, res.length - 1));
+  if (!res) return '';
+  return res.substring(1, res.length - 1);
 };
 
 export const range = (
