@@ -12,6 +12,12 @@ interface PeoplesContextValue {
 
 export const PeoplesContext = createContext<PeoplesContextValue>({ peoples: [] });
 
+/**
+ * Load all peoples at once is necessary,
+ * because i need to filter people by his homeworld,
+ * and swapi doesn't provide search or filter parameter for
+ * homeworld field of people entity
+ */
 const PeopleProvider: FC = ({ children }) => {
   const {
     data,
