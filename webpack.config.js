@@ -13,6 +13,7 @@ module.exports = (env, argv) => {
     entry: './src/index.tsx',
     output: {
       path: path.resolve(__dirname, 'build'),
+      publicPath: '/',
       filename: 'bundle.[contenthash:5].js'
     },
     module: {
@@ -62,7 +63,8 @@ module.exports = (env, argv) => {
     devServer: {
       port: 8080,
       watchContentBase: true,
-      hot: true
+      historyApiFallback: true,
+      hot: true,
     },
     plugins: [
       new HtmlWebpackPlugin({

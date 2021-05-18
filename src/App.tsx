@@ -1,10 +1,14 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
+import { QueryClientProvider } from 'react-query';
 import Router from './Components/Router';
+import { queryClient } from './libs/queryClient';
 
 const App: FC = () => {
-  return <Fragment>
+  return <QueryClientProvider
+    client={queryClient}
+  >
     <Router />
-  </Fragment>;
+  </QueryClientProvider>;
 };
 
 export default App;

@@ -1,16 +1,24 @@
 import { FC, Fragment } from 'react';
-import { Planet } from '../../entities';
+import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
+import { planetFetcher } from '../../libs/fetchers';
 import styles from './PlanetView.scss';
 
-interface Props {
-  planet: Planet
+interface Params {
+  planetId: string
 }
 
-const PlanetView: FC<Props> = ({
-  planet,
-}) => {
+const PlanetView: FC = () => {
+  const { planetId } = useParams<Params>();
+  const { data, isFetched, isLoading } = useQuery(
+    ['planet', planetId],
+    () => planetFetcher(planetId)
+  );
+  
   return <Fragment>
-    planet view {planet.name}
+    planet view
+    {isFetched && <div>{data?.name}</div>}
+    {isLoading && <div>loading</div>}
   </Fragment>;
 };
 
