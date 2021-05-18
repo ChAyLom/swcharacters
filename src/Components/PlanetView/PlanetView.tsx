@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { planetFetcher } from '../../libs/fetches';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
-import PeoplesList from './PeoplesList';
+import PeoplesList from '../PeoplesList/PeoplesList';
 import styles from './PlanetView.scss';
 
 interface Params {

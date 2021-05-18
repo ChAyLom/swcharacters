@@ -2,7 +2,7 @@ import { FC, Fragment, useContext } from 'react';
 import { Planet } from '../../entities';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import { PeoplesContext } from '../PeoplesProvider';
-import styles from './PlanetView.scss';
+import styles from './PeoplesList.scss';
 
 interface Props {
   planet: Planet,
