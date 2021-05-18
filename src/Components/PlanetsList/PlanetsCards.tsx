@@ -12,7 +12,9 @@ const PlanetsCards: FC<Props> = ({
 }) => {
   return <Fragment>
     <div className={styles.cont}>
-      {planets.map(
+      {planets.sort(
+        (a, b) => a.name.localeCompare(b.name)
+      ).map(
         planet => <PlanetCard
           key={planet.url}
           planet={planet}
