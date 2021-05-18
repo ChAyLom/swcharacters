@@ -1,11 +1,13 @@
 import { FC, Fragment } from 'react';
 import { useQuery } from 'react-query';
 import { allPlanetsFetch } from '../../libs/fetches';
+import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PlanetCard from '../PlanetCard/PlanetCard';
+import PlanetsCards from './PlanetsCards';
 
 const PlanetsList: FC = () => {
   const {
-    data,
+    data: planets,
     isFetched,
     isLoading,
     isError,
@@ -13,15 +15,10 @@ const PlanetsList: FC = () => {
 
   return <Fragment>
     planets list
-    {isFetched && data?.map(
-      planet => <PlanetCard
-        key={planet.url}
-        planet={planet}
-      />
-    )}
-    {isLoading && <div>
-      loading
-    </div>}
+    {(isFetched && planets) && <PlanetsCards
+      planets={planets}
+    />}
+    {isLoading && <LoadingSpin />}
     {isError && <div>
       error
     </div>}

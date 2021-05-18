@@ -1,5 +1,6 @@
 import { FC, Fragment, useContext } from 'react';
 import { Planet } from '../../entities';
+import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import { PeoplesContext } from '../PeoplesProvider';
 import styles from './PlanetView.scss';
 
@@ -21,7 +22,7 @@ const PeoplesList: FC<Props> = ({
     >
       {people.name}
     </div>)}
-    {isLoading && <div>loading peoples</div>}
+    {isLoading && <LoadingSpin />}
     {isError && <div>peoples fetching error</div>}
   </Fragment>;
 };

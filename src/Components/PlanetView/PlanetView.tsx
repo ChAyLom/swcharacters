@@ -2,6 +2,7 @@ import { FC, Fragment } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { planetFetcher } from '../../libs/fetches';
+import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PeoplesList from './PeoplesList';
 import styles from './PlanetView.scss';
 
@@ -24,7 +25,7 @@ const PlanetView: FC = () => {
         planet={planet}
       />
     </Fragment>}
-    {isLoading && <div>loading</div>}
+    {isLoading && <LoadingSpin />}
     {isError && <div>error</div>}
   </Fragment>;
 };

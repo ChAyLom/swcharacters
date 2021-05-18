@@ -1,0 +1,53 @@
+
+:global(body) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: max-content;
+  min-height: 100vh;
+}
+
+:global(html) {
+  font-size: 16px;
+  background: url(../assets/images/background.jpg);
+  overflow-x: hidden;
+
+  $thumbcolor: #888888;
+  $thumbcolor_hovered: #a0a0a0;
+  $scrollcollor: #1d1d1d;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: $scrollcollor;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: $thumbcolor;
+
+    &:hover {
+      background-color: $thumbcolor_hovered;
+    }
+  }
+
+  &::-webkit-scrollbar-corner,
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+.app_cont {
+  box-sizing: border-box;
+  margin: 1rem auto;
+  padding: 1rem;
+  // border-radius: 1rem;
+  font-size: 1.2rem;
+  width: calc(100% - 2rem);
+  max-width: 800px;
+  background-color: transparent;
+  color: white;
+}
