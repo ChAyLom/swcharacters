@@ -26,6 +26,8 @@ const PeoplesList: FC<Props> = ({
       people => peopleIds.includes(getIdFromUrl(people.url))
     ).filter(
       people => people.gender === genderFilter || !genderFilter
+    ).sort(
+      (a, b) => a.name.localeCompare(b.name)
     ).map(people => <div
       key={people.url}
     >
