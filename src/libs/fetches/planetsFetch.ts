@@ -1,4 +1,5 @@
 import { Planet, Response } from '../../entities';
+import allPagesFetch from './allPagesFetch';
 import baseFetch from './baseFetch';
 
 export const planetsFetcher = (
@@ -11,4 +12,8 @@ export const planetFetcher = (
   id: string,
 ): Promise<Planet> => (
   baseFetch(`/api/planets/${id}/`)
+);
+
+export const allPlanetsFetch = (): Promise<Planet[]> => (
+  allPagesFetch(planetsFetcher)
 );
