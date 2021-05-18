@@ -1,2 +1,2 @@
-export * from './peoplesFetch';
-export * from './planetsFetch';
+export * from './peopleFetches';
+export * from './planetFetches';

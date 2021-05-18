@@ -1,8 +1,8 @@
-import { FC, Fragment, useContext, useState } from 'react';
+import { FC, Fragment, useState } from 'react';
 import { Gender } from '../../enums';
+import usePeoplesByIds from '../../libs/hooks/usePeoplesByIds';
 import { getIdFromUrl } from '../../libs/utils';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
-import { PeoplesContext } from '../PeoplesProvider';
 import GenderSelector from './GenderSelector';
 import styles from './PeoplesList.scss';
 
@@ -13,7 +13,7 @@ interface Props {
 const PeoplesList: FC<Props> = ({
   peopleIds
 }) => {
-  const { peoples, isLoading, isError } = useContext(PeoplesContext);
+  const { peoples, isLoading, isError } = usePeoplesByIds(peopleIds);
   const [genderFilter, setGenderFilter] = useState<Gender>();
 
   return <Fragment>
