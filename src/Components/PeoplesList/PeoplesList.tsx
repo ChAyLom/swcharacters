@@ -16,7 +16,7 @@ const PeoplesList: FC<Props> = ({
   return <Fragment>
     <h3>Peoples</h3>
     {peoples.filter(
-      people => people.homeworld === planet.url
+      people => planet.residents.includes(people.url)
     ).map(people => <div
       key={people.url}
     >
