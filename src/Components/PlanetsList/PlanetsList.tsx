@@ -1,16 +1,19 @@
 import { FC, Fragment } from 'react';
 import { useQuery } from 'react-query';
-import { planetsFetcher } from '../../libs/fetches';
+import { allPlanetsFetch } from '../../libs/fetches';
 import PlanetCard from '../PlanetCard/PlanetCard';
 
 const PlanetsList: FC = () => {
-  const { data, isFetched, isLoading, isError } = useQuery(
-    'planets', () => planetsFetcher(1)
-  );
+  const {
+    data,
+    isFetched,
+    isLoading,
+    isError,
+  } = useQuery('planets', allPlanetsFetch);
 
   return <Fragment>
     planets list
-    {isFetched && data?.results.map(
+    {isFetched && data?.map(
       planet => <PlanetCard
         key={planet.url}
         planet={planet}
