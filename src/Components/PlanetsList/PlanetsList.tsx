@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { allPlanetsFetch } from '../../libs/fetches';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PlanetsCards from './PlanetsCards';
+import styles from './PlanetsList.scss';
 
 const PlanetsList: FC = () => {
   const {
@@ -13,7 +14,9 @@ const PlanetsList: FC = () => {
   } = useQuery('planets', allPlanetsFetch);
 
   return <Fragment>
-    planets list
+    <div className={styles.header}>
+      Planets
+    </div>
     {(isFetched && planets) && <PlanetsCards
       planets={planets}
     />}
