@@ -1,7 +1,7 @@
 import { createContext, FC } from 'react';
 import { useQuery } from 'react-query';
 import { People } from '../entities';
-import { allPeoplesFetcher } from '../libs/fetchers';
+import { allPeoplesFetcher } from '../libs/fetches';
 
 interface PeoplesContextValue {
   peoples: People[],

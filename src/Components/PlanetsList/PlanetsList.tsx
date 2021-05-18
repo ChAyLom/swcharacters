@@ -1,6 +1,6 @@
 import { FC, Fragment } from 'react';
 import { useQuery } from 'react-query';
-import { planetsFetcher } from '../../libs/fetchers';
+import { planetsFetcher } from '../../libs/fetches';
 import PlanetCard from '../PlanetCard/PlanetCard';
 
 const PlanetsList: FC = () => {

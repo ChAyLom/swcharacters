@@ -1,7 +1,7 @@
 import { FC, Fragment } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { planetFetcher } from '../../libs/fetchers';
+import { planetFetcher } from '../../libs/fetches';
 import PeoplesList from './PeoplesList';
 import styles from './PlanetView.scss';
 
