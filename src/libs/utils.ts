@@ -3,3 +3,13 @@ export const getIdFromUrl = (url: string): number | null => {
   if (!res) return null;
   return Number(res.substring(1, res.length - 1));
 };
+
+export const range = (
+  length: number,
+): number[] => {
+  const nums: number[] = [];
+
+  for (let i = 0; i < length; i++) nums.push(i);
+
+  return nums;
+};
