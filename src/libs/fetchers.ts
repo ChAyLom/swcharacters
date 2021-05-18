@@ -1,6 +1,6 @@
-import { Planet } from '../entities';
+import { People, Planet } from '../entities';
 
-interface PlanetsResponse<P> {
+interface Response<P> {
   count: number,
   next: string | null,
   previous: string | null,
@@ -33,7 +33,7 @@ async function baseFetchPattern(
 
 export const planetsFetcher = (
   page = 1,
-): Promise<PlanetsResponse<Planet[]>> => (
+): Promise<Response<Planet[]>> => (
   baseFetchPattern(baseUrl, '/api/planets/', { page: String(page) })
 );
 
@@ -42,3 +42,22 @@ export const planetFetcher = (
 ): Promise<Planet> => (
   baseFetchPattern(baseUrl, `/api/planets/${id}/`)
 );
+
+export const allPeoplesFetcher = async (): Promise<People[]> => {
+  let peoples: People[] = [];
+  let resp: Response<People[]>;
+  let page = 1;
+  do {
+    resp = await baseFetchPattern(
+      baseUrl,
+      '/api/people/',
+      { page: String(page++) }
+    );
+
+    peoples = [
+      ...peoples,
+      ...resp.results,
+    ];
+  } while (resp.next !== null);
+  return peoples;
+};
