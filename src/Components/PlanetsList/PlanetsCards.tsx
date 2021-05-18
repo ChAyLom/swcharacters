@@ -11,12 +11,14 @@ const PlanetsCards: FC<Props> = ({
   planets
 }) => {
   return <Fragment>
-    {planets.map(
-      planet => <PlanetCard
-        key={planet.url}
-        planet={planet}
-      />
-    )}
+    <div className={styles.cont}>
+      {planets.map(
+        planet => <PlanetCard
+          key={planet.url}
+          planet={planet}
+        />
+      )}
+    </div>
   </Fragment>;
 };
 

@@ -1,4 +1,9 @@
 
+@font-face {
+  font-family: 'Segoe Ui';
+  src: url(../assets/fonts/SegoeUi.ttf);
+}
+
 :global(body) {
   position: absolute;
   top: 0;
@@ -14,6 +19,7 @@
   font-size: 16px;
   background: url(../assets/images/background.jpg);
   overflow-x: hidden;
+  font-family: 'Segoe Ui';
 
   $thumbcolor: #888888;
   $thumbcolor_hovered: #a0a0a0;

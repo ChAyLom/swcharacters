@@ -12,9 +12,13 @@ const PlanetCard: FC<Props> = ({
   planet,
 }) => {
   return <Fragment>
-    <Link to={`/planet/${getIdFromUrl(planet.url)}`}>
-      <div>
-        planet card {planet.name}
+    <Link
+      to={`/planet/${getIdFromUrl(planet.url)}`}
+      className={styles.link_cont}
+      tabIndex={0}
+    >
+      <div className={styles.cont}>
+        {planet.name}
       </div>
     </Link>
   </Fragment>;
