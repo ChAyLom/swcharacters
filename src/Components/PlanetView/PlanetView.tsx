@@ -18,9 +18,10 @@ const PlanetView: FC = () => {
   );
 
   return <Fragment>
-    planet view
     {(isFetched && planet) && <Fragment>
-      <div>{planet.name}</div>
+      <div className={styles.header}>
+        Planet {planet.name}
+      </div>
       <PeoplesList
         planet={planet}
       />
