@@ -1,0 +1,16 @@
+
+.back_link {
+  font-size: 1.2rem;
+  border: .15rem solid gray;
+  padding: .5rem 1rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: white;
+  transition: all 100ms ease-in-out;
+  transition-property: background-color, color;
+
+  &:hover {
+    background-color: gray;
+    color: black;
+  }
+}

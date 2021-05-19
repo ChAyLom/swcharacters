@@ -4,7 +4,6 @@ import usePeoplesByIds from '../../libs/hooks/usePeoplesByIds';
 import { getIdFromUrl } from '../../libs/utils';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import GenderSelector from './GenderSelector';
-import styles from './PeoplesList.scss';
 import appStyles from '../../App.scss';
 
 interface Props {
