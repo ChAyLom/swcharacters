@@ -16,37 +16,61 @@ const PlanetBlock: FC<Props> = ({
       Planet {p.name}
     </div>
     <div className={styles.planet_info}>
-      <div>Diameter - <UnknownCheck value={p.diameter}>
-        {s => `${s} km`}
-      </UnknownCheck></div>
+      <div>
+        <span>Diameter - </span>
+        <UnknownCheck value={p.diameter}>
+          {s => <span>{`${s} km`}</span>}
+        </UnknownCheck>
+      </div>
 
-      <div>Day length - <UnknownCheck value={p.rotation_period}>
-        {s => `${s} hours`}
-      </UnknownCheck></div>
+      <div>
+        <span>Day length - </span>
+        <UnknownCheck value={p.rotation_period}>
+          {s => <span>{`${s} hours`}</span>}
+        </UnknownCheck>
+      </div>
 
-      <div>Year length - <UnknownCheck value={p.orbital_period}>
-        {s => `${s} days`}
-      </UnknownCheck></div>
+      <div>
+        <span>Year length - </span>
+        <UnknownCheck value={p.orbital_period}>
+          {s => <span>{`${s} days`}</span>}
+        </UnknownCheck>
+      </div>
 
-      <div>Gravity - <UnknownCheck value={p.gravity}>
-        {s => `${s.match(/\d+/)?.[0]}G`}
-      </UnknownCheck></div>
+      <div>
+        <span>Gravity - </span>
+        <UnknownCheck value={p.gravity}>
+          {s => <span>{`${s.match(/\d+/)?.[0]}G`}</span>}
+        </UnknownCheck>
+      </div>
 
-      <div>Terrain - <UnknownCheck value={p.terrain}>
-        {s => s.split(', ').map(v => capitalize(v)).join(', ')}
-      </UnknownCheck></div>
+      <div>
+        <span>Terrain - </span>
+        <UnknownCheck value={p.terrain}>
+          {s => <span>{s.split(', ').map(v => capitalize(v)).join(', ')}</span>}
+        </UnknownCheck>
+      </div>
 
-      <div>Watered surface - <UnknownCheck value={p.surface_water}>
-        {s => `${s}%`}
-      </UnknownCheck></div>
+      <div>
+        <span>Watered surface - </span>
+        <UnknownCheck value={p.surface_water}>
+          {s => <span>{`${s}%`}</span>}
+        </UnknownCheck>
+      </div>
 
-      <div>Climate - <UnknownCheck value={p.climate}>
-        {s => capitalize(s)}
-      </UnknownCheck></div>
+      <div>
+        <span>Climate - </span>
+        <UnknownCheck value={p.climate}>
+          {s => <span>{capitalize(s)}</span>}
+        </UnknownCheck>
+      </div>
 
-      <div>Population - <UnknownCheck value={p.population}>
-        {s => /\d+/.test(s) ? pretifyNumber(s) : ''}
-      </UnknownCheck></div>
+      <div>
+        <span>Population - </span>
+        <UnknownCheck value={p.population}>
+          {s => <span>{/\d+/.test(s) ? pretifyNumber(s) : ''}</span>}
+        </UnknownCheck>
+      </div>
     </div>
   </div>;
 };
