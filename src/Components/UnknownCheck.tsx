@@ -1,20 +1,21 @@
-import { FC, Fragment } from 'react';
+import { FC, Fragment, ReactElement } from 'react';
 
-interface Formater {
-  (str: string): string,
+interface RenderProp<P> {
+  (v: P): ReactElement | null | string,
 }
 
 interface Props {
-  formatter: Formater,
+  children: RenderProp<string>,
+  value: string,
 }
 
 const UnknownCheck: FC<Props> = ({
-  formatter,
-  children: value,
+  value,
+  children,
 }) => {
   if (typeof value !== 'string' || !value || value === null) return null;
   return <Fragment>
-    {value.toLowerCase() === 'unknown' ? 'unknown' : formatter(value)}
+    {value.toLowerCase() === 'unknown' ? 'unknown' : children(value)}
   </Fragment>;
 };
 

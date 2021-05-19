@@ -16,37 +16,37 @@ const PlanetBlock: FC<Props> = ({
       Planet {p.name}
     </div>
     <div className={styles.planet_info}>
-      <div>Diameter - <UnknownCheck
-        formatter={s => `${s} km`}
-      >{p.diameter}</UnknownCheck></div>
+      <div>Diameter - <UnknownCheck value={p.diameter}>
+        {s => `${s} km`}
+      </UnknownCheck></div>
 
-      <div>Day length - <UnknownCheck
-        formatter={s => `${s} hours`}
-      >{p.rotation_period}</UnknownCheck></div>
+      <div>Day length - <UnknownCheck value={p.rotation_period}>
+        {s => `${s} hours`}
+      </UnknownCheck></div>
 
-      <div>Year length - <UnknownCheck
-        formatter={s => `${s} days`}
-      >{p.orbital_period}</UnknownCheck></div>
+      <div>Year length - <UnknownCheck value={p.orbital_period}>
+        {s => `${s} days`}
+      </UnknownCheck></div>
 
-      <div>Gravity - <UnknownCheck
-        formatter={s => `${s.match(/\d+/)?.[0]}G`}
-      >{p.gravity}</UnknownCheck></div>
+      <div>Gravity - <UnknownCheck value={p.gravity}>
+        {s => `${s.match(/\d+/)?.[0]}G`}
+      </UnknownCheck></div>
 
-      <div>Terrain - <UnknownCheck
-        formatter={s => s.split(', ').map(v => capitalize(v)).join(', ')}
-      >{p.terrain}</UnknownCheck></div>
+      <div>Terrain - <UnknownCheck value={p.terrain}>
+        {s => s.split(', ').map(v => capitalize(v)).join(', ')}
+      </UnknownCheck></div>
 
-      <div>Watered surface - <UnknownCheck
-        formatter={s => `${s}%`}
-      >{p.surface_water}</UnknownCheck></div>
+      <div>Watered surface - <UnknownCheck value={p.surface_water}>
+        {s => `${s}%`}
+      </UnknownCheck></div>
 
-      <div>Climate - <UnknownCheck
-        formatter={s => capitalize(s)}
-      >{p.climate}</UnknownCheck></div>
+      <div>Climate - <UnknownCheck value={p.climate}>
+        {s => capitalize(s)}
+      </UnknownCheck></div>
 
-      <div>Population - <UnknownCheck
-        formatter={s => /\d+/.test(s) ? pretifyNumber(s) : ''}
-      >{p.population}</UnknownCheck></div>
+      <div>Population - <UnknownCheck value={p.population}>
+        {s => /\d+/.test(s) ? pretifyNumber(s) : ''}
+      </UnknownCheck></div>
     </div>
   </div>;
 };
