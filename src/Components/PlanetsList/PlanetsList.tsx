@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from 'react';
+import { FC, Fragment, useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { allPlanetsFetch } from '../../libs/fetches';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
@@ -15,6 +15,10 @@ const PlanetsList: FC = () => {
   } = useQuery('planets', allPlanetsFetch);
 
   const [search, setSearch] = useState<string>('');
+
+  useEffect(() => {
+    document.title = 'Star Wars: Planets';
+  }, []);
 
   return <Fragment>
     <div className={appStyles.header}>

@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react';
+import { FC, Fragment, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { planetFetcher } from '../../libs/fetches';
@@ -17,6 +17,10 @@ const PlanetView: FC = () => {
     ['planet', planetId],
     () => planetFetcher(planetId)
   );
+
+  useEffect(() => {
+    if (planet) document.title = `Star Wars: ${planet.name}`;
+  }, [planet]);
 
   return <Fragment>
     {(isFetched && planet) && <Fragment>
