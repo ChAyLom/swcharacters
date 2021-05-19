@@ -5,6 +5,7 @@ import { getIdFromUrl } from '../../libs/utils';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import GenderSelector from './GenderSelector';
 import styles from './PeoplesList.scss';
+import appStyles from '../../App.scss';
 
 interface Props {
   peopleIds: string[],
@@ -17,7 +18,7 @@ const PeoplesList: FC<Props> = ({
   const [genderFilter, setGenderFilter] = useState<Gender>();
 
   return <Fragment>
-    <div className={styles.header}>
+    <div className={appStyles.header}>
       Characters
     </div>
     <GenderSelector

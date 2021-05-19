@@ -4,6 +4,7 @@ import { allPlanetsFetch } from '../../libs/fetches';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PlanetsCards from './PlanetsCards';
 import styles from './PlanetsList.scss';
+import appStyles from '../../App.scss';
 
 const PlanetsList: FC = () => {
   const {
@@ -16,7 +17,7 @@ const PlanetsList: FC = () => {
   const [search, setSearch] = useState<string>('');
 
   return <Fragment>
-    <div className={styles.header}>
+    <div className={appStyles.header}>
       Planets
     </div>
     <div className={styles.filters}>
