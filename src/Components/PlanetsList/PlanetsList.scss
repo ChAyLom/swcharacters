@@ -9,6 +9,7 @@
   display: flex;
   margin-bottom: 1rem;
   justify-content: space-between;
+  padding: 0 .5rem;
 
   input {
     font-size: 1.2em;
@@ -17,6 +18,8 @@
     border: .15rem solid gray;
     transition: border-color 100ms ease-in-out;
     padding: .5rem;
+    width: 100%;
+    max-width: 300px;
 
     &:focus {
       outline: none;
