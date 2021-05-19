@@ -2,6 +2,7 @@ import { FC, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Planet } from '../../entities';
 import { getIdFromUrl } from '../../libs/utils';
+import PlanetInfo from '../PlanetView/PlanetInfo';
 import styles from './PlanetCard.scss';
 
 interface Props {
@@ -19,6 +20,11 @@ const PlanetCard: FC<Props> = ({
     >
       <div className={styles.cont}>
         {planet.name}
+        <div className={styles.info}>
+          <PlanetInfo
+            planet={planet}
+          />
+        </div>
       </div>
     </Link>
   </Fragment>;
