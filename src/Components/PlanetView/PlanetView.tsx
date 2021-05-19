@@ -5,6 +5,7 @@ import { planetFetcher } from '../../libs/fetches';
 import { getIdFromUrl } from '../../libs/utils';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PeoplesList from '../PeoplesList/PeoplesList';
+import PlanetBlock from './PlanetBlock';
 import styles from './PlanetView.scss';
 
 interface Params {
@@ -20,9 +21,9 @@ const PlanetView: FC = () => {
 
   return <Fragment>
     {(isFetched && planet) && <Fragment>
-      <div className={styles.header}>
-        Planet {planet.name}
-      </div>
+      <PlanetBlock
+        planet={planet}
+      />
       <PeoplesList
         peopleIds={planet.residents.map(url => getIdFromUrl(url))}
       />

@@ -16,7 +16,7 @@ const usePeoplesByIds = (ids: string[]): UsePeoplesByIdsResult => {
       queryFn: () => peopleFetch(id)
     }))
   );
-  console.log(queriesResults);
+  
   const isLoading = queriesResults.some(res => res.isLoading);
   const isFetched = queriesResults.every(res => res.isFetched);
   const isError = !isLoading && queriesResults.some(res => res.isError);

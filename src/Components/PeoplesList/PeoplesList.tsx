@@ -17,7 +17,9 @@ const PeoplesList: FC<Props> = ({
   const [genderFilter, setGenderFilter] = useState<Gender>();
 
   return <Fragment>
-    <h3>Peoples</h3>
+    <div className={styles.header}>
+      Characters
+    </div>
     <GenderSelector
       selected={genderFilter}
       setSelected={setGenderFilter}
