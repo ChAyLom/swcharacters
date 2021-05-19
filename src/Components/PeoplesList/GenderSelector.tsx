@@ -1,6 +1,8 @@
 import { Dispatch, FC, Fragment, SetStateAction } from 'react';
+import cln from 'classnames';
 import { Gender } from '../../enums';
 import styles from './PeoplesList.scss';
+import { capitalize } from '../../libs/utils';
 
 interface Props {
   selected: Gender | undefined,
@@ -11,18 +13,30 @@ const GenderSelector: FC<Props> = ({
   selected,
   setSelected,
 }) => {
+  const click = (gender: Gender) => setSelected(
+    current => current === gender ? undefined : gender
+  );
+
   return <Fragment>
-    <ul>
-      {Object.values(Gender).map(gender => <li
-        key={gender}
-        onClick={() => setSelected(
-          current => current === gender ? undefined : gender
-        )}
-        style={{color: selected === gender ? 'red' : undefined}}
-      >
-        {gender}
-      </li>)}
-    </ul>
+    <div className={styles.gender_selector_cont}>
+      {Object.values(Gender).map(
+        gender => <div
+          key={gender}
+          tabIndex={0}
+          className={styles.gender}
+          onClick={() => click(gender)}
+          onKeyPress={e => ['Space', 'Enter'].includes(e.code) && click(gender)}
+        >
+          <div
+            className={cln(
+              styles.checkbox,
+              gender === selected && styles.checkbox_checked,
+            )}
+          />
+          <div className={styles.gender_name}>{capitalize(gender)}</div>
+        </div>
+      )}
+    </div>
   </Fragment>;
 };
 
