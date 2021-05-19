@@ -6,7 +6,6 @@ import { getIdFromUrl } from '../../libs/utils';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PeoplesList from '../PeoplesList/PeoplesList';
 import PlanetBlock from './PlanetBlock';
-import styles from './PlanetView.scss';
 
 interface Params {
   planetId: string

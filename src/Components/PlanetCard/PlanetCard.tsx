@@ -19,7 +19,9 @@ const PlanetCard: FC<Props> = ({
       tabIndex={0}
     >
       <div className={styles.cont}>
-        {planet.name}
+        <div className={styles.header}>
+          {planet.name}
+        </div>
         <div className={styles.info}>
           <PlanetInfo
             planet={planet}
