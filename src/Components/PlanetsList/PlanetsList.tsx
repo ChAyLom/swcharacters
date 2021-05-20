@@ -5,7 +5,7 @@ import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PlanetsCards from './PlanetsCards';
 import styles from './PlanetsList.scss';
 import appStyles from '../../App.scss';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import RequestError from '../RequestError';
 
 const PlanetsList: FC = () => {
@@ -15,6 +15,7 @@ const PlanetsList: FC = () => {
     isLoading,
     isError,
   } = useQuery('planets', allPlanetsFetch);
+  const intl = useIntl();
 
   const [search, setSearch] = useState<string>('');
 
@@ -31,7 +32,7 @@ const PlanetsList: FC = () => {
       <input
         value={search}
         onChange={e => setSearch(e.target.value)}
-        placeholder="Search"
+        placeholder={intl.formatMessage({ id: 'search'})}
       />
     </div>
     {(isFetched && planets) && <PlanetsCards
