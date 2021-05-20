@@ -1,8 +1,8 @@
 import { Dispatch, FC, Fragment, SetStateAction } from 'react';
 import cln from 'classnames';
-import { Gender } from '../../enums';
+import { Gender, IntlGenderIds } from '../../enums';
 import styles from './PeoplesList.scss';
-import { capitalize } from '../../libs/utils';
+import { FormattedMessage } from 'react-intl';
 
 interface Props {
   selected: Gender | undefined,
@@ -33,7 +33,9 @@ const GenderSelector: FC<Props> = ({
               gender === selected && styles.checkbox_checked,
             )}
           />
-          <div className={styles.gender_name}>{capitalize(gender)}</div>
+          <div className={styles.gender_name}>
+            <FormattedMessage id={IntlGenderIds[gender]}/>
+          </div>
         </div>
       )}
     </div>

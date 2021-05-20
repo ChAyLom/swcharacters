@@ -1,9 +1,10 @@
 import { FC } from 'react';
+import { FormattedMessage } from 'react-intl';
 import styles from '../../App.scss';
 
 const NotFound: FC = () => {
   return <div className={styles.error_text}>
-    This planet doesn't exist
+    <FormattedMessage id="planetFotFound"/>
   </div>;
 };
 

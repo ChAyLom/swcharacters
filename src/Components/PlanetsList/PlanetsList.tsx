@@ -5,6 +5,8 @@ import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PlanetsCards from './PlanetsCards';
 import styles from './PlanetsList.scss';
 import appStyles from '../../App.scss';
+import { FormattedMessage } from 'react-intl';
+import RequestError from '../RequestError';
 
 const PlanetsList: FC = () => {
   const {
@@ -22,7 +24,7 @@ const PlanetsList: FC = () => {
 
   return <Fragment>
     <div className={appStyles.header}>
-      Planets
+      <FormattedMessage id="planets"/>
     </div>
     <div className={styles.filters}>
       <div></div>
@@ -38,9 +40,7 @@ const PlanetsList: FC = () => {
       )}
     />}
     {isLoading && <LoadingSpin />}
-    {isError && <div>
-      error
-    </div>}
+    {isError && <RequestError />}
   </Fragment>;
 };
 

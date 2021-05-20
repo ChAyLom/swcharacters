@@ -14,5 +14,15 @@
   "surfaceWater": "Watered surface",
   "climate": "Climate",
   "population": "Population",
+  "characters": "Characters",
+  "planets": "Planets",
+  "noPeoplesByGender": "This planet has no characters with \"{gender}\" gender",
+  "noPeoples": "This planet has no characters",
+  "requestError": "An error occurred during request",
+  "planetFotFound": "This planet doesn't exist",
+  "genderMale": "Male",
+  "genderFemale": "Female",
+  "na": "N/A",
+  "unknown": "unknown",
   "test": "test"
 }

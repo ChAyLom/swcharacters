@@ -1,13 +1,13 @@
 import { FC, Fragment, useState } from 'react';
-import { Gender } from '../../enums';
+import { Gender, IntlGenderIds } from '../../enums';
 import usePeoplesByIds from '../../libs/hooks/usePeoplesByIds';
-import { capitalize } from '../../libs/utils';
 import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import GenderSelector from './GenderSelector';
 import appStyles from '../../App.scss';
 import PeopleCard from '../PeopleCard/PeopleCard';
 import RequestError from '../RequestError';
 import styles from './PeoplesList.scss';
+import { FormattedMessage } from 'react-intl';
 
 interface Props {
   peopleIds: string[],
@@ -25,7 +25,9 @@ const PeoplesList: FC<Props> = ({
 
   return <Fragment>
     <div className={appStyles.header}>
-      Characters
+      <FormattedMessage
+        id="characters"
+      />
     </div>
     <GenderSelector
       selected={genderFilter}
@@ -46,14 +48,23 @@ const PeoplesList: FC<Props> = ({
       filteredPeoples.length === 0 &&
       peoples.length !== 0
     ) && <div className={styles.no_peoples}>
-      This planet has no characters with "{capitalize(genderFilter)}" gender
+      <FormattedMessage
+        id="noPeoplesByGender"
+        values={{
+          gender: <FormattedMessage
+            id={IntlGenderIds[genderFilter]}
+          />
+        }}
+      />
     </div>}
 
     {(
       isFetched &&
       peoples.length === 0
     ) && <div className={styles.no_peoples}>
-      This planet has no characters
+      <FormattedMessage
+        id="noPeoples"
+      />
     </div>}
 
     {isLoading && <LoadingSpin />}
