@@ -1,0 +1,29 @@
+.cont {
+  width: 50%;
+
+  &:nth-child(2n) {
+    .card {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(2n + 1) {
+    .card {
+      margin-left: 0;
+    }
+  }
+}
+
+.card {
+  margin: 1rem;
+  padding: .5rem;
+  background-color: #64646496;
+
+}
+
+.name {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}

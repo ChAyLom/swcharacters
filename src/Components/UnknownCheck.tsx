@@ -15,7 +15,9 @@ const UnknownCheck: FC<Props> = ({
 }) => {
   if (typeof value !== 'string' || !value || value === null) return null;
   return <Fragment>
-    {value.toLowerCase() === 'unknown' ? 'unknown' : children(value)}
+    {(
+      ['unknown', 'n/a'].includes(value.toLowerCase())
+    ) ? value : children(value)}
   </Fragment>;
 };
 

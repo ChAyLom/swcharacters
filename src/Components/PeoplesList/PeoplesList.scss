@@ -1,3 +1,14 @@
+.list_cont {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.no_peoples {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
 .gender_selector_cont {
   display: flex;
   margin-bottom: 1rem;
