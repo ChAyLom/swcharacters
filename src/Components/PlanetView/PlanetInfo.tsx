@@ -1,6 +1,6 @@
 import { FC, Fragment } from 'react';
 import { Planet } from '../../entities';
-import { capitalize, pretifyNumber } from '../../libs/utils';
+import { capitalize } from '../../libs/utils';
 import InfoRow from '../InfoRow';
 
 interface Props {
@@ -51,7 +51,7 @@ const PlanetInfo: FC<Props> = ({
     <InfoRow
       value={planet.population}
       nameId="population"
-      valueFormat={pretifyNumber}
+      valueId="number"
     />
   </Fragment>;
 };

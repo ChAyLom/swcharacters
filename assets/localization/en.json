@@ -1,11 +1,11 @@
 {
   "back": "Back",
   "planetName": "Planet {name}",
-  "distanceKm": "{value} km",
-  "distanceCm": "{value} cm",
-  "massKg": "{value} kg",
-  "timeHours": "{value} hours",
-  "timeDays": "{value} days",
+  "distanceKm": "{value, number} km",
+  "distanceCm": "{value, number} cm",
+  "massKg": "{value, number} kg",
+  "timeHours": "{value, number} hours",
+  "timeDays": "{value, number} days",
   "gravityG": "{value}G",
   "percentView": "{value}%",
   "diameter": "Diameter",
@@ -35,5 +35,6 @@
   "eyeColor": "Eye color",
   "hairColor": "Hair color",
   "search": "Search",
+  "number": "{value, number}",
   "test": "test"
 }
