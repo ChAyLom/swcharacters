@@ -21,6 +21,7 @@
   "noPeoplesByGender": "This planet has no characters with \"{gender}\" gender",
   "noPeoples": "This planet has no characters",
   "requestError": "An error occurred during request",
+  "tryReload": "Try reloading the page",
   "planetFotFound": "This planet doesn't exist",
   "genderMale": "Male",
   "genderFemale": "Female",

@@ -43,7 +43,7 @@ const PlanetView: FC = () => {
     </Fragment>}
     {isLoading && <LoadingSpin />}
     {isError && (
-      (error?.response.status === 404) ? (
+      (error?.response?.status === 404) ? (
         <NotFound />
       ) : (
         <RequestError />

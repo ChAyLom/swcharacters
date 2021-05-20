@@ -4,7 +4,8 @@ import styles from '../App.scss';
 
 const RequestError: FC = () => {
   return <div className={styles.error_text}>
-    <FormattedMessage id="requestError"/>
+    <div><FormattedMessage id="requestError"/></div>
+    <div><FormattedMessage id="tryReload"/></div>
   </div>;
 };
 
