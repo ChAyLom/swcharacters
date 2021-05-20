@@ -1,7 +1,6 @@
 import { FC } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { People } from '../../entities';
-import UnknownCheck from '../UnknownCheck';
+import InfoRow from '../InfoRow';
 import styles from './PeopleCard.scss';
 
 interface Props {
@@ -15,27 +14,36 @@ const PeopleCard: FC<Props> = ({
     <div className={styles.card}>
       <div className={styles.name}>{people.name}</div>
       <div className={styles.info}>
-        <div><FormattedMessage id="birthYear"/> - {people.birth_year}</div>
-        <div><FormattedMessage id="gender"/> - {people.gender}</div>
-        <div>
-          <FormattedMessage id="height"/> - <UnknownCheck value={people.height}>
-            {value => <FormattedMessage
-              id="distanceCm"
-              values={{ value }}
-            />}
-          </UnknownCheck>
-        </div>
-        <div>
-          <FormattedMessage id="mass"/> - <UnknownCheck value={people.mass}>
-            {value => <FormattedMessage
-              id="massKg"
-              values={{ value }}
-            />}
-          </UnknownCheck>
-        </div>
-        <div><FormattedMessage id="skinColor"/> - {people.skin_color}</div>
-        <div><FormattedMessage id="eyeColor"/> - {people.eye_color}</div>
-        <div><FormattedMessage id="hairColor"/> - {people.hair_color}</div>
+        <InfoRow
+          value={people.birth_year}
+          nameId="birthYear"
+        />
+        <InfoRow
+          value={people.gender}
+          nameId="gender"
+        />
+        <InfoRow
+          value={people.height}
+          nameId="height"
+          valueId="distanceCm"
+        />
+        <InfoRow
+          value={people.mass}
+          nameId="mass"
+          valueId="massKg"
+        />
+        <InfoRow
+          value={people.skin_color}
+          nameId="skinColor"
+        />
+        <InfoRow
+          value={people.eye_color}
+          nameId="eyeColor"
+        />
+        <InfoRow
+          value={people.hair_color}
+          nameId="hairColor"
+        />
       </div>
     </div>
   </div>;

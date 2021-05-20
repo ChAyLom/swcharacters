@@ -1,7 +1,7 @@
 import { FC, Fragment } from 'react';
 import { Planet } from '../../entities';
 import { capitalize, pretifyNumber } from '../../libs/utils';
-import InfoRow from './InfoRow';
+import InfoRow from '../InfoRow';
 
 interface Props {
   planet: Planet,

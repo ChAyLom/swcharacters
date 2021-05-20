@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { FormattedMessage } from 'react-intl';
-import UnknownCheck from '../UnknownCheck';
+import UnknownCheck from './UnknownCheck';
 
 interface ValueView {
   (v: string): string,
