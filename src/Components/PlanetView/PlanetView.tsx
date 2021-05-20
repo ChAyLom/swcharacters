@@ -9,7 +9,7 @@ import LoadingSpin from '../LoadingSpin/LoadingSpin';
 import PeoplesList from '../PeoplesList/PeoplesList';
 import PlanetBlock from './PlanetBlock';
 import NotFound from './NotFound';
-import UnknownError from '../UnknownError';
+import RequestError from '../RequestError';
 
 interface Params {
   planetId: string
@@ -46,7 +46,7 @@ const PlanetView: FC = () => {
       (error?.response.status === 404) ? (
         <NotFound />
       ) : (
-        <UnknownError />
+        <RequestError />
       )
     )}
   </Fragment>;
