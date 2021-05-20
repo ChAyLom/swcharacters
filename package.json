@@ -2,7 +2,7 @@
   "name": "swcharacters",
   "version": "1.0.0",
   "description": "A SPA for view info about Star Wars characters",
-  "main": "index.js",
+  "main": "src/index.tsx",
   "keywords": [],
   "author": "ChAyLom",
   "license": "ISC",
