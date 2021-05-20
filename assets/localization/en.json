@@ -2,6 +2,8 @@
   "back": "Back",
   "planetName": "Planet {name}",
   "distanceKm": "{value} km",
+  "distanceCm": "{value} cm",
+  "massKg": "{value} kg",
   "timeHours": "{value} hours",
   "timeDays": "{value} days",
   "gravityG": "{value}G",
@@ -24,5 +26,12 @@
   "genderFemale": "Female",
   "na": "N/A",
   "unknown": "unknown",
+  "birthYear": "Birth year",
+  "gender": "Gender",
+  "height": "Height",
+  "mass": "Mass",
+  "skinColor": "Skin color",
+  "eyeColor": "Eye color",
+  "hairColor": "Hair color",
   "test": "test"
 }
