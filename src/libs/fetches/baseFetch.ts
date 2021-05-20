@@ -1,3 +1,4 @@
+import HttpError from './HttpError';
 
 const apiUrl = process.env.API_URL || '';
 
@@ -18,6 +19,9 @@ async function baseFetch<P>(
       Accept: 'application/json',
     }
   });
+
+  if (!resp.ok) throw new HttpError(resp);
+
   const data = await resp.json();
   return data;
 }
