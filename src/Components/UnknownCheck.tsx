@@ -5,7 +5,7 @@ interface RenderProp<P> {
 }
 
 interface Props {
-  children: RenderProp<string>,
+  children: RenderProp<string> | ReactElement,
   value: string,
 }
 
@@ -17,7 +17,9 @@ const UnknownCheck: FC<Props> = ({
   return <Fragment>
     {(
       ['unknown', 'n/a'].includes(value.toLowerCase())
-    ) ? value : children(value)}
+    ) ? value : (
+      typeof children === 'function' ? children(value) : children
+    )}
   </Fragment>;
 };
 

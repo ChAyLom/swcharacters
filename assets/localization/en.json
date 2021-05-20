@@ -1,0 +1,18 @@
+{
+  "back": "Back",
+  "planetName": "Planet {name}",
+  "distanceKm": "{value} km",
+  "timeHours": "{value} hours",
+  "timeDays": "{value} days",
+  "gravityG": "{value}G",
+  "percentView": "{value}%",
+  "diameter": "Diameter",
+  "dayLen": "Day length",
+  "yearLen": "Year length",
+  "gravity": "Gravity",
+  "terrain": "Terrain",
+  "surfaceWater": "Watered surface",
+  "climate": "Climate",
+  "population": "Population",
+  "test": "test"
+}
