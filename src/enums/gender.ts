@@ -7,7 +7,7 @@ export enum Gender {
 
 export const IntlGenderIds = {
   [Gender.Female]: 'genderFemale',
-  [Gender.Male]: 'genderFemale',
+  [Gender.Male]: 'genderMale',
   [Gender.NA]: 'na',
   [Gender.Unknown]: 'unknown',
 };
